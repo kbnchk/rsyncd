@@ -1,0 +1,22 @@
+services:
+  rsyncd:
+    image: ghcr.io/kbnchk/rsyncd:latest
+    container_name: rsyncd
+    volumes:
+      - type: bind
+        source: /tmp/mysyncvolume # patch to host volume
+        target: /volume # internal volume mountpoint
+        read_only: true
+    environment:
+      USER: root # rsycd user
+      GROUP: root # rsycd group
+      ALLOW: 0.0.0.0/0 # allowed networks CIDRs
+    restart: unless-stopped
+    ports:
+      - "873:873" # Testing purpose only, do not  expose to the internet
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: '64M'
+
