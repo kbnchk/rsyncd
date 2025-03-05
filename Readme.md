@@ -1,8 +1,8 @@
 # RSYNCD Docker image
 
-Docker image for rsync deamon.
+Docker image for rsync daemon.
 Allows to sync folders from host to docker containers.
-Designed only for internal use in docker bridge network. My usecase was to sync host ssl certificates with another host via amnezia-wg running in docker containers.
+Designed only for internal use in docker bridge network. My usecase was to sync host ssl certificates with another host via amnezia-wg running in docker container.
 
 ### Usage:
 
