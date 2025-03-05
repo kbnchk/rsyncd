@@ -6,6 +6,7 @@ GROUP=${GROUP:-nogroup}
 
 mkdir -p ${VOLUME}
 
+# config file
 cat <<EOF > /etc/rsyncd.conf
 uid = ${USER}
 gid = ${GROUP}
